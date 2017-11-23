@@ -2,10 +2,11 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
 import { PostsComponent } from './posts/posts.component';
+import { PostsViewComponent } from './posts-view/posts-view.component';
 
 export const routes: Routes = [
-    { path: 'practive', redirectTo: '/posts', pathMatch: 'full' },
-    { path: 'posts', component: PostsComponent }
+    { path: 'posts', component: PostsComponent },
+    { path: 'posts-view', component: PostsViewComponent }
 
 ];
 
