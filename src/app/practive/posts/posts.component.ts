@@ -11,6 +11,7 @@ import { POSTS} from './mock-posts';
 export class PostsComponent implements OnInit {
 
   public posts: Post[];
+  public selectedPost: Post;
   constructor() { }
 
   ngOnInit() {
@@ -19,4 +20,7 @@ export class PostsComponent implements OnInit {
   public getPosts() {
     this.posts = POSTS;
   }
+    onSelect(post: Post): void {
+        this.selectedPost = post;
+    }
 }
