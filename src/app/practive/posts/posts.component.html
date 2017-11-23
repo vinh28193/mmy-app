@@ -1,99 +1,35 @@
-<div class="work">
-  <a href="inner.html">
-    <img src="assets/img/work1.jpg" class="media" alt=""/>
-    <div class="caption">
-      <div class="work_title">
-        <h1>culpa qui officia deserunt mollit</h1>
-      </div>
-    </div>
-  </a>
-</div>
 
-<div class="work">
-  <a href="inner.html">
-    <img src="assets/img/work2.jpg" class="media" alt=""/>
-    <div class="caption">
-      <div class="work_title">
-        <h1>culpa qui officia deserunt mollit</h1>
+<section  *ngIf = "isList" class="main clearfix">
+  <div class="work" *ngFor="let post of posts" (click)="onSelect(post)" >
+    <a href="javascript:void(0);">
+      <img src="{{post.image}}" class="media" alt=""/>
+      <div class="caption">
+        <div class="work_title">
+          <h1>{{post.title}}</h1>
+        </div>
       </div>
-    </div>
-  </a>
-</div>
+    </a>
+  </div>
+</section>
+<section *ngIf = "!isList && activePost" class="main clearfix">
 
-<div class="work">
-  <a href="inner.html">
-    <img src="assets/img/work3.jpg" class="media" alt=""/>
-    <div class="caption">
-      <div class="work_title">
-        <h1>culpa qui officia deserunt mollit</h1>
-      </div>
+  <section class="top">
+    <div class="wrapper content_header clearfix">
+      <div class="work_nav">
+        <ul class="btn clearfix">
+          <li><a href="javascript:void(0);" class="previous" data-title="Previous"></a></li>
+          <li><a (click)="onSelect(null)" href="javascript:void(0);" class="grid" data-title="Portfolio"></a></li>
+          <li><a href="javascript:void(0);" class="next" data-title="Next"></a></li>
+        </ul>
+      </div><!-- end work_nav -->
+      <h1 class="title">{{activePost.title}}</h1>
     </div>
-  </a>
-</div>
+  </section><!-- end top -->
 
-<div class="work">
-  <a href="inner.html">
-    <img src="assets/img/work4.jpg" class="media" alt=""/>
-    <div class="caption">
-      <div class="work_title">
-        <h1>culpa qui officia deserunt mollit</h1>
-      </div>
-    </div>
-  </a>
-</div>
-
-<div class="work">
-  <a href="inner.html">
-    <img src="assets/img/work5.jpg" class="media" alt=""/>
-    <div class="caption">
-      <div class="work_title">
-        <h1>culpa qui officia deserunt mollit</h1>
-      </div>
-    </div>
-  </a>
-</div>
-
-<div class="work">
-  <a href="inner.html">
-    <img src="assets/img/work6.jpg" class="media" alt=""/>
-    <div class="caption">
-      <div class="work_title">
-        <h1>culpa qui officia deserunt mollit</h1>
-      </div>
-    </div>
-  </a>
-</div>
-
-<div class="work">
-  <a href="inner.html">
-    <img src="assets/img/work2.jpg" class="media" alt=""/>
-    <div class="caption">
-      <div class="work_title">
-        <h1>culpa qui officia deserunt mollit</h1>
-      </div>
-    </div>
-  </a>
-</div>
-
-<div class="work">
-  <a href="inner.html">
-    <img src="assets/img/work3.jpg" class="media" alt=""/>
-    <div class="caption">
-      <div class="work_title">
-        <h1>culpa qui officia deserunt mollit</h1>
-      </div>
-    </div>
-  </a>
-</div>
-
-<div class="work">
-  <a href="inner.html">
-    <img src="assets/img/work1.jpg" class="media" alt=""/>
-    <div class="caption">
-      <div class="work_title">
-        <h1>culpa qui officia deserunt mollit</h1>
-      </div>
-    </div>
-  </a>
-</div>
-
+  <section class="wrapper">
+    <div class="content">
+      <h4>{{activePost.description}}</h4>
+      <p>{{activePost.body}}</p>
+    </div><!-- end content -->
+  </section>
+</section><!-- end main -->
