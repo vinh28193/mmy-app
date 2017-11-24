@@ -4,6 +4,7 @@ import {RouterModule, Routes} from '@angular/router';
 
 import { PostsComponent } from './posts/posts.component';
 import { PractiveRoutingModule } from './practive-routing.module';
+import { PostsService } from './posts/posts.service';
 
 
 @NgModule({
@@ -11,6 +12,7 @@ import { PractiveRoutingModule } from './practive-routing.module';
       CommonModule,
       PractiveRoutingModule,
   ],
-  declarations: [PostsComponent]
+  declarations: [PostsComponent],
+  providers: [PostsService]
 })
 export class PractiveModule { }

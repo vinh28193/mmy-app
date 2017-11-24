@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 
 import { Post } from './post';
-import { POSTS} from './mock-posts';
-import {count} from "rxjs/operators";
+
+import { PostsService} from './posts.service';
 
 @Component({
     selector: 'app-posts',
@@ -12,21 +12,17 @@ import {count} from "rxjs/operators";
 export class PostsComponent implements OnInit {
 
     public posts: Post[];
-    public totalPost;
     public nextPost;
     public activePost: Post;
     public previousPost;
     public isList = true;
-    constructor() { }
+    constructor(private postsService: PostsService) { }
 
     ngOnInit() {
         this.getPosts();
     }
     public getPosts() {
-        this.posts = POSTS;
-        this.previousPost = 1;
-        this.nextPost = 1;
-        console.log(this.posts);
+        return this.postsService.getPosts().subscribe(posts => this.posts = posts);
     }
     onSelect(post: any): void {
         if (post == null) {
