@@ -2,7 +2,7 @@
 <section  *ngIf = "isList" class="main clearfix">
   <div class="work" *ngFor="let post of posts" (click)="onSelect(post)" >
     <a href="javascript:void(0);">
-      <img src="{{post.image}}" class="media" alt=""/>
+      <img src="{{post.thumbnail}}" class="media" alt=""/>
       <div class="caption">
         <div class="work_title">
           <h1>{{post.title}}</h1>
@@ -14,12 +14,13 @@
 <section *ngIf = "!isList && activePost" class="main clearfix">
 
   <section class="top">
+    <img src="{{activePost.background_image}}" alt="{{activePost.title}}">
     <div class="wrapper content_header clearfix">
       <div class="work_nav">
         <ul class="btn clearfix">
-          <li><a href="javascript:void(0);" class="previous" data-title="Previous"></a></li>
-          <li><a (click)="onSelect(null)" href="javascript:void(0);" class="grid" data-title="Portfolio"></a></li>
-          <li><a href="javascript:void(0);" class="next" data-title="Next"></a></li>
+          <li *ngIf = "previousPost"><a (click)="onChange('previous',activePost.id - 1)" href="javascript:void(0);" class="previous" data-title="Previous"></a></li>
+          <li *ngIf = "activePost"><a (click)="onSelect(null)" href="javascript:void(0);" class="grid" data-title="Portfolio"></a></li>
+          <li *ngIf = "nextPost"><a (click)="onChange('next',activePost.id + 1)" href="javascript:void(0);" class="next" data-title="Next"></a></li>
         </ul>
       </div><!-- end work_nav -->
       <h1 class="title">{{activePost.title}}</h1>
