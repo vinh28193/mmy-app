@@ -22,5 +22,5 @@ export class PostsService  extends AppService {
             .do(data => console.log(data))
             .map(res => res.json())
             .catch(this.handleError);
-    }ß
+    }
 }
