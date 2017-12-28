@@ -8,7 +8,6 @@ import 'rxjs/add/operator/map';
 import { AppService} from '../../app.service';
 
 import { Post } from './post';
-import { POSTS} from './mock-posts';
 
 @Injectable()
 export class PostsService  extends AppService {
