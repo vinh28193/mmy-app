@@ -4,7 +4,7 @@ import {RouterModule, Routes} from '@angular/router';
 import { HttpModule } from '@angular/http';
 import { HttpInMemoryWebApiModule } from 'angular-in-memory-web-api';
 
-import { InMemoryDataService } from '../in-memory-data.service';
+import { InMemoryDataService } from './in-memory-data.service';
 
 import { PostsComponent } from './posts/posts.component';
 import { PractiveRoutingModule } from './practive-routing.module';
