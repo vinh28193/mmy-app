@@ -11,13 +11,11 @@ import { Post } from './post';
 
 @Injectable()
 export class PostsService  extends AppService {
-
-  public apiUrl = 'app/posts';
   constructor(http: Http) {
       super(http);
   }
     getPosts (): Observable<Post[]> {
-        return this.http.get(this.apiUrl)
+        return this.http.get(this.getApiURL('posts'))
             .do(data => console.log(data))
             .map(res => res.json())
             .catch(this.handleError);

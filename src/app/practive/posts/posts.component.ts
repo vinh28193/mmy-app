@@ -5,7 +5,7 @@ import { Post } from './post';
 import { PostsService} from './posts.service';
 
 @Component({
-    selector: 'app-posts',
+    selector: 'app-practive-posts',
     templateUrl: './posts.component.html',
     styleUrls: ['./posts.component.css']
 })

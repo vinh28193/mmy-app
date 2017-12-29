@@ -1,10 +1,17 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-
+import { PractiveComponent} from './practive.component';
 import { PostsComponent } from './posts/posts.component';
 
 export const routes: Routes = [
-    { path: 'posts', component: PostsComponent },
+    {
+        path: 'practive', component: PractiveComponent,
+        children: [
+            {
+                path: 'posts', component: PostsComponent,
+            }
+        ]
+    },
 
 ];
 

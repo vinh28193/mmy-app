@@ -5,10 +5,12 @@ import { HttpModule } from '@angular/http';
 import { HttpInMemoryWebApiModule } from 'angular-in-memory-web-api';
 
 import { InMemoryDataService } from './in-memory-data.service';
+import { PractiveComponent } from './practive.component';
+import { PractiveRoutingModule } from './practive-routing.module';
 
 import { PostsComponent } from './posts/posts.component';
-import { PractiveRoutingModule } from './practive-routing.module';
 import { PostsService } from './posts/posts.service';
+import { HeaderComponent } from './header/header.component';
 
 
 @NgModule({
@@ -23,8 +25,13 @@ import { PostsService } from './posts/posts.service';
       HttpInMemoryWebApiModule.forRoot(
           InMemoryDataService, { dataEncapsulation: false }
       )
-  ],
-  declarations: [PostsComponent],
-  providers: [PostsService]
+    ],
+    declarations: [
+        PractiveComponent,
+        PostsComponent,
+        HeaderComponent
+    ],
+    providers: [PostsService],
+    bootstrap: [PractiveComponent]
 })
 export class PractiveModule { }
