@@ -88,19 +88,19 @@ export class InMemoryDataService implements InMemoryDbService {
         const navs = [
             {
                 title: 'Home',
-                slug: 'home',
+                url: 'home',
             },
             {
                 title: 'Posts',
-                slug: 'posts',
+                url: 'posts',
             },
             {
                 title: 'About us',
-                slug: 'about-us',
+                url: 'about-us',
             },
             {
                 title: 'Contact',
-                slug: 'contact',
+                url: 'contact',
             }
         ];
         const users = [
