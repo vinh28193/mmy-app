@@ -84,7 +84,25 @@ export class InMemoryDataService implements InMemoryDbService {
                 body: 'Nunc pellentesque mauris ut magna pulvinar, ligula diam congue orci, id cursus dui velit quis.',
                 status: 1
             },
-        ]
+        ];
+        const navs = [
+            {
+                title: 'Home',
+                slug: 'home',
+            },
+            {
+                title: 'Posts',
+                slug: 'posts',
+            },
+            {
+                title: 'About us',
+                slug: 'about-us',
+            },
+            {
+                title: 'Contact',
+                slug: 'contact',
+            }
+        ];
         const users = [
             {
                 id: 1,
@@ -97,7 +115,7 @@ export class InMemoryDataService implements InMemoryDbService {
                 password: 'manager',
             },
         ];
-        const db = {posts, users};
+        const db = {posts, navs, users};
         return db;
     }
 }

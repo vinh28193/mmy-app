@@ -10,7 +10,8 @@ import { PractiveRoutingModule } from './practive-routing.module';
 
 import { PostsComponent } from './posts/posts.component';
 import { PostsService } from './posts/posts.service';
-import { HeaderComponent } from './header/header.component';
+import { NavbarComponent } from './navbar/navbar.component';
+import { NavbarService } from './navbar/navbar.service';
 
 
 @NgModule({
@@ -29,9 +30,9 @@ import { HeaderComponent } from './header/header.component';
     declarations: [
         PractiveComponent,
         PostsComponent,
-        HeaderComponent
+        NavbarComponent
     ],
-    providers: [PostsService],
+    providers: [PostsService, NavbarService],
     bootstrap: [PractiveComponent]
 })
 export class PractiveModule { }
